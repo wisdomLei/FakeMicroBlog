@@ -1,2 +1,3 @@
-# FakeMicroBlog
-This is a test project built by imitates micro blog, to connect intelligent breaker and devices.
+# 智能配电系统
+---
+收集配电产品数据并展示、分析及统一存档。可以实时显示配电产品状态，实时推送产品报警并进行远程控制。

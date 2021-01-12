@@ -3,6 +3,10 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+#IPS.MVC
+IPS.MVC/obj
+IPS.MVC/bin
+
 # User-specific files
 *.rsuser
 *.suo
