@@ -8,6 +8,8 @@
 * 使用基类添加需要重复使用的字段
     * 父类字段用 virtual 修饰用于子类的重载
     * 问题：重载与隐藏的区别？
+        * 子类重载父类的成员，通过转换得到的父类实例其成员即为子类的成员。
+        * 子类隐藏父类的成员，通过转换得到的父类实例其成员依然为父类的成员。
 ## 添加登录、注册用的Model及其基类
 --- 
 ```C#
@@ -38,7 +40,7 @@
 ---
 ```C#
     public class EntityBase {
-        public int ID { get; set; }
+        public virtual int ID { get; set; }
         [Required]
         public virtual string Name { get; set; }
     }
@@ -52,19 +54,17 @@
         public string Password { get; set; }
         [Required]
         public string VeriCode { get; set; }
-        public Role Role { get; set; }
+        public virtual Role Role { get; set; }
+        public DateTime CreatedTime { get; set; } = DateTime.UtcNow;
     }
 
     public class DataRecord {
-        public int ID { get; set; }
+        public long ID { get; set; }
         [Required]
         public virtual Production Production { get; set; }
         public virtual Property Property { get; set; }
-    }
-
-    public class Production :EntityBase{
-        public virtual Region Region { get; set; }
-        public virtual List<DataRecord> DataRecords { get; set; }
+        public string Value { get; set; }
+        public DateTime Time { get; set; } = DateTime.UtcNow;
     }
 
     public class Property :EntityBase{
@@ -78,6 +78,12 @@
         public virtual List<Production> Productions { get; set; }
     }
 
+    public class Production : EntityBase {
+        public new long ID { get; set; }
+        public virtual Region Region { get; set; }
+        public virtual List<DataRecord> DataRecords { get; set; }
+    }
+    
     public class Role : EntityBase {
         public override string Name { get; set; } = "customer";
     }

@@ -14,5 +14,6 @@ namespace IPS.Model {
         [Required]
         public string VeriCode { get; set; }
         public virtual Role Role { get; set; }
+        public DateTime CreatedTime { get; set; } = DateTime.UtcNow;
     }
 }
