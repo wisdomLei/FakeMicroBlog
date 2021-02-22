@@ -1,0 +1,38 @@
+﻿@model IPS.Models.Register
+@{
+    ViewData["Title"] = "Register";
+}
+<div class="row">
+    <div class="col-sm-8">
+        <form asp-action="Register">
+            <div class="form-group">
+                <label>@Html.DisplayNameFor(r => r.Email)</label>
+                <input class="form-control" asp-for="Email" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label>@Html.DisplayNameFor(r => r.VeriCode)</label>
+                <input class="form-control" asp-for="VeriCode" />
+                <button class="form-control btn btn-info" onclick="sendVeri(this)" type="button">发送验证码</button>
+                <span asp-validation-for="VeriCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label>@Html.DisplayNameFor(r => r.Name)</label>
+                <input class="form-control" asp-for="Name" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label>@Html.DisplayNameFor(r => r.Password)</label>
+                <input class="form-control" asp-for="Password" type="password"/>
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="注册" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<script src="~/js/Account.js"></script>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

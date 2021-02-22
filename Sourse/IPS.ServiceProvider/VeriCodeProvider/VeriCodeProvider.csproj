@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EmailProvider\EmailProvider.csproj" />
+    <ProjectReference Include="..\..\IPS.Models\IPS.Models.csproj" />
+    <ProjectReference Include="..\..\IPS.Service\IPS.Service.csproj" />
+  </ItemGroup>
+
+</Project>
