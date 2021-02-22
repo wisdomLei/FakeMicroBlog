@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <TypeScriptTarget>ES5</TypeScriptTarget>
+    <TypeScriptJSXEmit>React</TypeScriptJSXEmit>
+    <TypeScriptModuleKind />
+    <TypeScriptCompileOnSaveEnabled>True</TypeScriptCompileOnSaveEnabled>
+    <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>
+    <TypeScriptRemoveComments>False</TypeScriptRemoveComments>
+    <TypeScriptOutFile />
+    <TypeScriptOutDir />
+    <TypeScriptGeneratesDeclarations>False</TypeScriptGeneratesDeclarations>
+    <TypeScriptNoEmitOnError>True</TypeScriptNoEmitOnError>
+    <TypeScriptSourceMap>True</TypeScriptSourceMap>
+    <TypeScriptMapRoot />
+    <TypeScriptSourceRoot />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\IPS.ServiceProvider\DbProvider\DbProvider.csproj" />
+    <ProjectReference Include="..\IPS.ServiceProvider\EmailProvider\EmailProvider.csproj" />
+    <ProjectReference Include="..\IPS.Models\IPS.Models.csproj" />
+    <ProjectReference Include="..\IPS.ServiceProvider\AccountProvider\AccountProvider.csproj" />
+    <ProjectReference Include="..\IPS.Service\IPS.Service.csproj" />
+    <ProjectReference Include="..\IPS.ServiceProvider\VeriCodeProvider\VeriCodeProvider.csproj" />
+  </ItemGroup>
+
+</Project>

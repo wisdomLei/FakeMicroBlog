@@ -3,10 +3,6 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
-#IPS.MVC
-IPS.MVC/obj
-IPS.MVC/bin
-
 # User-specific files
 *.rsuser
 *.suo
@@ -242,6 +238,7 @@ ClientBin/
 *.pfx
 *.publishsettings
 orleans.codegen.cs
+*.editorconfig
 
 # Including strong name files can present a security risk
 # (https://github.com/github/gitignore/pull/2483#issue-259490424)
